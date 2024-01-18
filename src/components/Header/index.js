@@ -1,8 +1,12 @@
 import React from 'react'
+import s from './index.module.css'
 
 function Header() {
   return (
-    <div></div>
+    <div className={s.root}>
+      <p>Double Pizza</p>
+      <div></div>
+    </div>
   )
 }
 
