@@ -3,5 +3,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: blue;
+    background: orangered;
+}
+
+.header {
+    color: white;
+    margin-left: 16px;
 }
