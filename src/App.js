@@ -9,14 +9,16 @@ function App() {
   const [cart, setCart] = useState([])
 
   return (
-    <div className={s.container}>
+    <>
       <Header cart={cart} />
-      <Content
-        data={data}
-        cart={cart}
-        setCart={setCart}
-      />
-    </div>
+      <div className={s.container}>
+        <Content
+          data={data}
+          cart={cart}
+          setCart={setCart}
+        />
+      </div>
+    </>
   );
 }
 

@@ -12,7 +12,7 @@ function Content({ data, cart, setCart }) {
   }
   const [currentLeftImage, setCurrentLeftImage] = useState(0)
   const [currentRightImage, setCurrentRightImage] = useState(0)
-  const order = []
+  const order = cart
   const addToCart = () => {
     order.push({
       title1: data[currentLeftImage].title,
@@ -39,9 +39,8 @@ function Content({ data, cart, setCart }) {
               currentImage={currentLeftImage}
               setCurrentImage={setCurrentLeftImage}
             />            
-          </div>
-          <p>{data[currentLeftImage].diameter}</p>
-          <p className={s.price}>${data[currentLeftImage].price}</p>
+          </div>          
+          <p className={s.price}>Price: ${data[currentLeftImage].price}</p>
         </div>
         <div className={s.rightBlock}>
           <p className={s.title}>{data[currentRightImage].title}</p>
@@ -57,13 +56,14 @@ function Content({ data, cart, setCart }) {
               currentImage={currentRightImage}
               setCurrentImage={setCurrentRightImage}
             />            
-          </div>
-          <p>{data[currentRightImage].diameter}</p>
-          <p className={s.price}>${data[currentRightImage].price}</p>
+          </div>          
+          <p className={s.price}>Price: ${data[currentRightImage].price}</p>
         </div>
       </div>
-      <p className={s.summary}>Summary price: {(+data[currentRightImage].price)+(+data[currentLeftImage].price)}</p>
-      <button className={s.button} onClick={addToCart}>Add to cart</button>
+      <div className={s.footer}>
+        <p className={s.summary}>Summary price: {(+data[currentRightImage].price)+(+data[currentLeftImage].price)}</p>
+        <button className={s.button} onClick={addToCart}>Add to cart</button>
+      </div>
     </div>
   )
 }

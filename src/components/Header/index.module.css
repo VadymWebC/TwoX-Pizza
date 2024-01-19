@@ -16,3 +16,16 @@
 .cart {
     color: white;    
 }
+
+.orderItem {
+    border-bottom: 1px solid grey;
+    padding: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.orderPrice {
+    font-size: 24px;
+    font-weight: 600;
+}

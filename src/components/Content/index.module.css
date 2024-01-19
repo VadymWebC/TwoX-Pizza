@@ -45,13 +45,14 @@
 }
 
 .price {
-    font-size: 36px;
+    font-size: 24px;
     font-weight: 600;
     padding: 0 16px;
+    margin: 0;
 }
 
 .summary {
-    font-size: 36px;
+    font-size: 24px;
     font-weight: 600;
     color: red;
 }
@@ -64,4 +65,10 @@
     border-radius: 8px;
     cursor: pointer;
     border: 0;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }

@@ -8,21 +8,20 @@ function Header({ cart }) {
   const [visible, setVisible] = useState(false)
 
   const List = () => cart.map(item => (
-    <div>
+    <div className={s.orderItem}>
       <div>
         <div>{item.title1}</div>
         <div>{item.title2}</div>
       </div>
-      <div>        
-        <div>{item.summary}</div>
+      <div className={s.orderPrice}>
+        <div>${item.summary}</div>
       </div>
     </div>
   ))
 
   const modelText = () => {
     return (
-      <div>
-        <p>Your order:</p>
+      <div>        
         <List />
       </div>
     )
@@ -34,11 +33,11 @@ function Header({ cart }) {
     //
   }
   return (
-    <>
+    <>    
       <Modal
         visible={visible}
         setVisible={setVisible}
-        modalTitle={'Cart'}
+        modalTitle={'Your order:'}
         modalText={modelText}
         onCancel={onCancel}
         onSuccess={onSuccess}
