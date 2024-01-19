@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import s from './index.module.css'
 import Gallery from '../Gallery'
 
@@ -10,6 +10,8 @@ function Content({ data }) {
   const controlRightStyle = {
     right: '125px'
   }
+  const [currentLeftImage, setCurrentLeftImage] = useState(0)
+  const [currentRightImage, setCurrentRightImage] = useState(0)
   return (
     <div className={s.root}>
       <div className={s.leftBlock}>
@@ -21,6 +23,8 @@ function Content({ data }) {
             height={600}
             infinity={true}
             controlStyle={controlLeftStyle}
+            currentImage={currentLeftImage}
+            setCurrentImage={setCurrentLeftImage}
           />
         </div>
       </div>
@@ -33,6 +37,8 @@ function Content({ data }) {
             height={600}
             infinity={true}
             controlStyle={controlRightStyle}
+            currentImage={currentRightImage}
+            setCurrentImage={setCurrentRightImage}
           />
         </div>
       </div>

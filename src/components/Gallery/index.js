@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import s from './index.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight, faChevronLeft, faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons'
@@ -15,15 +14,15 @@ export default function Gallery({
     infinity = false,
     width,
     height,
-    controlStyle
+    controlStyle,
+    currentImage,
+    setCurrentImage
 }) {
 
     const { widthScreen } = useSize()
 
     const defaultWidth = vertical ? (width || WIDTH_DEFAULT_VERTICAL) : (width || WIDTH_DEFAULT_HORIZONTAL)
     const defaultHeight = vertical ? (height || HEIGHT_DEFAULT_VERTICAL) : (height || HEIGHT_DEFAULT_HORIZONTAL)
-
-    const [currentImage, setCurrentImage] = useState(0)
 
     function onPrevArrow () {
         if (infinity && currentImage === 0) {
