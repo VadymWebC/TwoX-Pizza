@@ -14,34 +14,46 @@ function Content({ data }) {
   const [currentRightImage, setCurrentRightImage] = useState(0)
   return (
     <div className={s.root}>
-      <div className={s.leftBlock}>
-        <div className={s.galleryLeftBlock}>
-          <Gallery
-            images={images}
-            vertical={true}
-            width={550}
-            height={600}
-            infinity={true}
-            controlStyle={controlLeftStyle}
-            currentImage={currentLeftImage}
-            setCurrentImage={setCurrentLeftImage}
-          />
+      <div className={s.galleries}>
+        <div className={s.leftBlock}>
+          <p className={s.title}>{data[currentLeftImage].title}</p>
+          <p className={s.desc}>{data[currentLeftImage].desc}</p>
+          <div className={s.galleryLeftBlock}>            
+            <Gallery
+              images={images}
+              vertical={true}
+              width={550}
+              height={600}
+              infinity={true}
+              controlStyle={controlLeftStyle}
+              currentImage={currentLeftImage}
+              setCurrentImage={setCurrentLeftImage}
+            />            
+          </div>
+          <p>{data[currentLeftImage].diameter}</p>
+          <p className={s.price}>${data[currentLeftImage].price}</p>
+        </div>
+        <div className={s.rightBlock}>
+          <p className={s.title}>{data[currentRightImage].title}</p>
+          <p className={s.desc}>{data[currentRightImage].desc}</p>
+          <div className={s.galleryRightBlock}>            
+            <Gallery
+              images={images}
+              vertical={true}
+              width={550}
+              height={600}
+              infinity={true}
+              controlStyle={controlRightStyle}
+              currentImage={currentRightImage}
+              setCurrentImage={setCurrentRightImage}
+            />            
+          </div>
+          <p>{data[currentRightImage].diameter}</p>
+          <p className={s.price}>${data[currentRightImage].price}</p>
         </div>
       </div>
-      <div className={s.rightBlock}>
-        <div className={s.galleryRightBlock}>
-          <Gallery
-            images={images}
-            vertical={true}
-            width={550}
-            height={600}
-            infinity={true}
-            controlStyle={controlRightStyle}
-            currentImage={currentRightImage}
-            setCurrentImage={setCurrentRightImage}
-          />
-        </div>
-      </div>
+      <p className={s.summary}>Summary price: {(+data[currentRightImage].price)+(+data[currentLeftImage].price)}</p>
+      <button>Add to cart</button>
     </div>
   )
 }
