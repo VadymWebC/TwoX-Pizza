@@ -19,3 +19,16 @@
     width: 275px;
     overflow: hidden;
 }
+
+.galleryBlock2 {
+    width: 275px;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+
+
+

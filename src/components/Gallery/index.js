@@ -14,7 +14,8 @@ export default function Gallery({
     vertical = false,
     infinity = false,
     width,
-    height
+    height,
+    controlStyle
 }) {
 
     const { widthScreen } = useSize()
@@ -59,7 +60,7 @@ export default function Gallery({
         <div className={s.root}>
             {
                 (infinity || currentImage > 0) && (
-                    <div className={vertical ? s.prevArrowVertical : s.prevArrow} style={arrowIndent} onClick={onPrevArrow}>
+                    <div className={vertical ? s.prevArrowVertical : s.prevArrow} style={controlStyle || arrowIndent} onClick={onPrevArrow}>
                         <FontAwesomeIcon icon={vertical ? faChevronUp : faChevronLeft} />
                     </div>
                 )
@@ -69,7 +70,7 @@ export default function Gallery({
 
             {
                 (infinity || currentImage !== images.length - 1) && (
-                    <div className={vertical ? s.nextArrowVertical : s.nextArrow} style={arrowIndent} onClick={onNextArrow}>
+                    <div className={vertical ? s.nextArrowVertical : s.nextArrow} style={controlStyle || arrowIndent} onClick={onNextArrow}>
                         <FontAwesomeIcon icon={vertical ? faChevronDown : faChevronRight} />
                     </div>
                 )
