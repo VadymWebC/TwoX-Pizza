@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import s from './index.module.css'
 import Gallery from '../Gallery'
 
-function Content({ data }) {
+function Content({ data, cart, setCart }) {
   const images = data.map(item => item.photo)
   const controlLeftStyle = {
     left: '125px'
@@ -12,6 +12,16 @@ function Content({ data }) {
   }
   const [currentLeftImage, setCurrentLeftImage] = useState(0)
   const [currentRightImage, setCurrentRightImage] = useState(0)
+  const order = []
+  const addToCart = () => {
+    order.push({
+      title1: data[currentLeftImage].title,
+      title2: data[currentRightImage].title,      
+      summary: (+data[currentRightImage].price)+(+data[currentLeftImage].price)
+    })
+    setCart(order)
+    alert('Pizza added to cart')
+  }
   return (
     <div className={s.root}>
       <div className={s.galleries}>
@@ -53,7 +63,7 @@ function Content({ data }) {
         </div>
       </div>
       <p className={s.summary}>Summary price: {(+data[currentRightImage].price)+(+data[currentLeftImage].price)}</p>
-      <button>Add to cart</button>
+      <button className={s.button} onClick={addToCart}>Add to cart</button>
     </div>
   )
 }

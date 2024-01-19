@@ -4,11 +4,27 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
 import Modal from '../Modal'
 
-function Header() {
+function Header({ cart }) {
   const [visible, setVisible] = useState(false)
+
+  const List = () => cart.map(item => (
+    <div>
+      <div>
+        <div>{item.title1}</div>
+        <div>{item.title2}</div>
+      </div>
+      <div>        
+        <div>{item.summary}</div>
+      </div>
+    </div>
+  ))
+
   const modelText = () => {
     return (
-      <div>List of the Pizza</div>
+      <div>
+        <p>Your order:</p>
+        <List />
+      </div>
     )
   }
   const onCancel = () => {

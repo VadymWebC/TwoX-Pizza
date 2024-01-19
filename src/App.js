@@ -6,10 +6,16 @@ import { pizza } from './pizza';
 
 function App() {
   const [data, setData] = useState(pizza)
+  const [cart, setCart] = useState([])
+
   return (
     <div className={s.container}>
-      <Header />
-      <Content data={data} />
+      <Header cart={cart} />
+      <Content
+        data={data}
+        cart={cart}
+        setCart={setCart}
+      />
     </div>
   );
 }
