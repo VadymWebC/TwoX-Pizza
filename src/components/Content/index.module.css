@@ -3,24 +3,25 @@
     flex-direction: row;
 }
 
-.half {
+.leftBlock {
     display: flex;
-    flex: 1;
-    background: #333;
+    flex: 1;    
+    justify-content: flex-end;
+    padding: 2px;
 }
 
-.half2 {
+.rightBlock {
     display: flex;
-    flex: 1;
-    background: #999;
+    flex: 1;    
+    padding: 2px;
 }
 
-.galleryBlock {
+.galleryLeftBlock {
     width: 275px;
     overflow: hidden;
 }
 
-.galleryBlock2 {
+.galleryRightBlock {
     width: 275px;
     overflow: hidden;
     display: flex;

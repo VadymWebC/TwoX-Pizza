@@ -4,12 +4,15 @@ import Gallery from '../Gallery'
 
 function Content({ data }) {
   const images = data.map(item => item.photo)
-  const controlStyle = {
+  const controlLeftStyle = {
     left: '125px'
+  }
+  const controlRightStyle = {
+    right: '125px'
   }
   return (
     <div className={s.root}>
-      <div className={s.half}>
+      <div className={s.leftBlock}>
         <div className={s.galleryLeftBlock}>
           <Gallery
             images={images}
@@ -17,11 +20,11 @@ function Content({ data }) {
             width={550}
             height={600}
             infinity={true}
-            controlStyle={controlStyle}
+            controlStyle={controlLeftStyle}
           />
         </div>
       </div>
-      <div className={s.half2}>
+      <div className={s.rightBlock}>
         <div className={s.galleryRightBlock}>
           <Gallery
             images={images}
@@ -29,7 +32,7 @@ function Content({ data }) {
             width={550}
             height={600}
             infinity={true}
-            controlStyle={controlStyle}
+            controlStyle={controlRightStyle}
           />
         </div>
       </div>
