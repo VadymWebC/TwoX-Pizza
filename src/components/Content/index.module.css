@@ -1,0 +1,21 @@
+.root {
+    display: flex;
+    flex-direction: row;
+}
+
+.half {
+    display: flex;
+    flex: 1;
+    background: #333;
+}
+
+.half2 {
+    display: flex;
+    flex: 1;
+    background: #999;
+}
+
+.galleryBlock {
+    width: 275px;
+    overflow: hidden;
+}

@@ -11,6 +11,12 @@ function Header() {
       <div>List of the Pizza</div>
     )
   }
+  const onCancel = () => {
+    setVisible(false)
+  }
+  const onSuccess = () => {
+    //
+  }
   return (
     <>
       <Modal
@@ -18,6 +24,12 @@ function Header() {
         setVisible={setVisible}
         modalTitle={'Cart'}
         modalText={modelText}
+        onCancel={onCancel}
+        onSuccess={onSuccess}
+        isCloseIcon={true}
+        isFooter={true}
+        onSuccessButtonLabel={'Order'}        
+        isCancelButton={true}
       />
       <div className={s.root}>
         <p className={s.header}>Double Pizza</p>
